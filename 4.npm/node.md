@@ -40,3 +40,67 @@ npm init
     npm root -g
     ```
 - 发布
+
+
+
+## 源npm 切换源切换到国内
+- cnpm taobao 
+- 安装nrm工具，想在命令行下切换源
+```
+npm install -g nrm
+```
+- 显示所有源
+```
+nrm ls
+```
+- 添加源
+```
+nrm add zhufeng http://172.18.0.199
+```
+- 切换源
+```
+nrm use zhufeng
+``` 
+
+## 安装nodeppt
+```
+npm install -g nodeppt
+```
+- 重新指定端口
+```
+nodeppt start -p 3000
+```
+开始写ppt
+必须采用markdown格式
+
+> https://github.com/ksky521/nodePPT
+
+## 发布包
+我们写好一个包，发布到npm上
+- 包里必须要有package.json文件
+```
+npm init -y
+``` 
+- 写一个包的入口文件
+- 发布到npm网站上
+添加用户 如果有表示登陆
+```
+npm add user 
+```
+- 发布包（第三方包）
+```
+npm publish
+```
+- 下载第三方包
+```
+npm install 包名 --save
+```
+
+> 引用第三方包，通过require引用包的名字，直接引用即可，node_modules必须在同级或者上级才能够找到，会默认执行package.json文字中main指定的文件
+
+- 取消发布
+```
+npm unpublish --force
+```
+
+> 只有发布包时才必须要切换到npm上
