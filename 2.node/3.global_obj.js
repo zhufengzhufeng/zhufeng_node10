@@ -17,11 +17,12 @@ console.log(timer1-timer);*/
 //console.log(__filename); //当前文件的绝对路径
 //console.log(__dirname); //当前文件所在的文件夹的绝对路径
 //文件外套了一层函数，他里面包含了一些形参，是这个函数的形参
-/*
-(function (require,module,exports,__filename,__dirname) {
+
+
+/*(function (require,module,exports,__filename,__dirname) {
     //3.global_obj.js
-})()
-*/
+})();*/
+
 //3.setTimeout 定时器,this不是global
 /*function sum(a,b) {
     console.log(a+b);
@@ -49,9 +50,10 @@ console.log(process.cwd());//current working directory;
 process.chdir('..');//change directory; __dirname的值不会更改
 process.nextTick();//下一队列
 //nextTick是一个异步方法，他比setTimeout和setImmediate更早些
-
 //process 进程
-//Buffer 缓存
 //setImmediate 立即
 //setInterval
 //setTimeout
+
+
+//Buffer 缓存
