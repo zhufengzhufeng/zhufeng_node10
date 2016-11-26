@@ -11,9 +11,17 @@ function mkdirPath(p) {
         }
     }
 }
-mkdirPath('a\\b\\c\\d');
+//mkdirPath('a\\b\\c\\d');
 //判断一个文件是否存在
 var flag = fs.existsSync('a1');
 console.log(flag);
+//异步创建   循环创建需要递归
+
+
 
 //作业：用异步的方式创建目录
+fs.mkdir('a',function (err) {});
+fs.exists('a',function (exists) {
+    //exists 是否存在
+});
+

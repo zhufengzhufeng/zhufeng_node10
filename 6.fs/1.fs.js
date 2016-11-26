@@ -1,4 +1,4 @@
-//node中的核心模块 file system
+﻿//node中的核心模块 file system
 var fs = require('fs');
 //读取 写入 同步和异步同时出现
 //有没有返回值 有没有回调函数
