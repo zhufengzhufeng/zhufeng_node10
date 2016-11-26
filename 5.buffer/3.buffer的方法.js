@@ -25,6 +25,7 @@ console.log(buffer.toString()); //像buffer中写入内容时要注意偏移量�
 //concat连接多个buffer
 var buf1 = new Buffer('珠');
 var buf2 = new Buffer('峰1培训');
+var buf3 = new Buffer('峰1培训');
 //list, 要连接的列表
 //totalLength 总长度
 console.log(Buffer.concat([buf1,buf2],3000).toString());
@@ -33,7 +34,20 @@ console.log(Buffer.concat([buf1,buf2],3000).toString());
 //2.写长度过短，写不进去就不要了
 //3.长度过长 如果过长就不要过长的内容，只要有效内容(截取有效长度)
 Buffer.myConcat = function (list,totalLength) {
-
-    return
+    //判断是否传递length
+    if(typeof totalLength === "undefined"){
+        //如果没有传递，算出一个总长度
+        totalLength = 0;
+        list.forEach(function (item) {
+            totalLength += item.length;
+        });
+    } //获得一个长度
+    var buffer = new Buffer(totalLength);
+    var index = 0 ;
+    list.forEach(function (item) { //将每一个buffer拷贝到大buffer上
+        item.copy(buffer,index);
+        index += item.length; //index最后一次结束后，拷贝的总内容的长度
+    });
+    return buffer.slice(0,index);
 };
-console.log(Buffer.myConcat([buf1,buf2],3000).toString());
+console.log(Buffer.myConcat([buf1,buf2,buf3]).toString());
