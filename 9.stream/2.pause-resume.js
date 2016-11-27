@@ -12,4 +12,4 @@ rs.on('data',function (data) {
 //只有读完后才会触发end
 rs.on('end',function () {
     console.log(str);
-})
+});
